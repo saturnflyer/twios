@@ -10,4 +10,12 @@ class Author
   def github_url
     "https://github.com/#{handle}"
   end
+
+  def eql?(other)
+    self.handle == other.handle
+  end
+
+  def hash
+    handle.to_i
+  end
 end
