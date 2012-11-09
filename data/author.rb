@@ -7,6 +7,10 @@ class Author
     end
   end
 
+  def name
+    @name || @handle
+  end
+
   def github_url
     "https://github.com/#{handle}"
   end

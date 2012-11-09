@@ -6,15 +6,24 @@ class MarkdownGenerator
   end
 
   def generate
-    markdown = ''
+    markdown = '# This Week in Open Source'
 
     repos.each do |repo|
       markdown << "## [#{repo.name}](#{repo.url})\n"
       markdown << "#{repo.description}\n\n"
 
       repo.contributors.each do |contributor|
-        markdown << "![avatar](#{contributor.avatar_url}) "
-        markdown << "[#{contributor.name}](#{contributor.github_url})\n\n"
+        if contributor.avatar_url
+          markdown << "![avatar](#{contributor.avatar_url}) "
+        end
+
+        if contributor.handle
+          markdown << "[#{contributor.name}](#{contributor.github_url})"
+        else
+          markdown << contributor.name
+        end
+
+        markdown << "\n\n"
       end
     end
 
