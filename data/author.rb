@@ -30,4 +30,8 @@ class Author
   def hash
     handle.to_i
   end
+
+  def <=>(other)
+    name <=> other.name
+  end
 end

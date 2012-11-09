@@ -29,7 +29,7 @@ class ThankingContext
   def find_contributors
     repos.each do |repo|
       finder = ContributorsFinder.new(repo)
-      repo.contributors = finder.since(last_thank_you).uniq
+      repo.contributors = finder.since(last_thank_you).uniq.sort
     end
   end
 
