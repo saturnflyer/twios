@@ -16,7 +16,15 @@ class Author
   end
 
   def eql?(other)
-    self.handle == other.handle
+    if handle && other.handle
+      handle == other.handle
+    elsif name && other.name
+      name == other.name
+    elsif handle.nil? && other.handle.nil? && name.nil? && other.handle.nil?
+      true
+    else
+      false
+    end
   end
 
   def hash
