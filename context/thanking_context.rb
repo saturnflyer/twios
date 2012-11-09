@@ -8,7 +8,7 @@ class ThankingContext
   end
 
   def thank
-    find_repos
+    build_repos
     find_contributors
     generate_markdown
     create_gist
@@ -22,8 +22,8 @@ class ThankingContext
     Date.today - 7
   end
 
-  def find_repos
-    self.repos = ReposFinder.new('thoughtbot').find
+  def build_repos
+    self.repos = ReposBuilder.new('thoughtbot', Thoughtbot::REPOS).build
   end
 
   def find_contributors
