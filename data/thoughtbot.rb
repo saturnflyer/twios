@@ -12,7 +12,7 @@ class Thoughtbot
     :laptop => 'Set up your OS X laptop for development.',
     :neat => 'Create a responsive grid with Sass and Bourbon.',
     :paperclip => 'Attach files to ActiveRecord objects.',
-    :'shoulda-matchers' => 'Test common Rails functionality in one line',
+    :'shoulda-matchers' => 'Test common Rails functionality in one line.',
     :suspenders => 'Create a Rails app.'
   }
 end

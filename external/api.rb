@@ -8,10 +8,12 @@ class Api
   end
 
   def get(endpoint)
-    JSON.parse(`curl -s https://#{host}#{endpoint}`)
+    response = `curl -s https://#{host}#{endpoint}`
+    JSON.parse(response)
   end
 
   def post(endpoint, data)
-    JSON.parse(`curl -s -d '#{data}' https://#{host}#{endpoint}`)
+    response = `curl -s -d '#{data.to_json}' https://#{host}#{endpoint}`
+    JSON.parse(response)
   end
 end

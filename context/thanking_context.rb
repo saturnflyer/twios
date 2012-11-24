@@ -11,9 +11,7 @@ class ThankingContext
     build_repos
     find_contributors
     generate_markdown
-    create_gist
-    puts gist.url
-    # tweet_thanks
+    puts markdown
   end
 
   private
@@ -35,13 +33,5 @@ class ThankingContext
 
   def generate_markdown
     self.markdown = MarkdownGenerator.new(repos).generate
-  end
-
-  def create_gist
-    self.gist = GistCreator.new(markdown).create
-  end
-
-  def tweet_thanks
-    ThanksTweeter.new(gist).tweet
   end
 end
