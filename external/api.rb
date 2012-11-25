@@ -1,5 +1,11 @@
 require 'json'
 
+# Example usage:
+#
+#     Github = Api.new('api.github.com')
+#     Github.get("/repos/#{repo_name}/commits?since=#{date}")
+#     Github.post('/gists', data.to_json)
+
 class Api
   def initialize(host)
     @host = host
@@ -10,6 +16,6 @@ class Api
   end
 
   def post(endpoint, data)
-    JSON.parse(`curl -s -d '#{data.to_json}' https://#{@host}#{endpoint}`)
+    JSON.parse(`curl -s -d '#{data}' https://#{@host}#{endpoint}`)
   end
 end
