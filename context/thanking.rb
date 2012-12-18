@@ -1,6 +1,6 @@
 # Goal: to print details of contributions and tweet about it
 # Primary actor: twitter account
-# Secondary actors: repositories, contributors since a given date
+# Secondary actors: repositories, a gist
 # Preconditions: repositories are already collected
 
 class Thanking
