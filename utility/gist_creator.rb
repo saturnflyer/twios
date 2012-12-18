@@ -22,7 +22,7 @@ class GistCreator
     begin
       json = Github.post('/gists', data.to_json)
     rescue JSON::ParserError => e
-      raise
+      puts e
     ensure
       Gist.new(json['html_url'], :errors => e)
     end
