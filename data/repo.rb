@@ -1,5 +1,5 @@
 class Repo
-  attr_accessor :organization, :name, :description, :contributors
+  attr_accessor :organization, :name, :description
 
   def initialize(attributes = {})
     attributes.each do |key, value|
